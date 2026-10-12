@@ -1,0 +1,55 @@
+:root {
+  --bg: #eef1f4;
+  --raised: #ffffff;
+  --ink: #16181d;
+  --muted: #5c6570;
+  --line: #d5dbe3;
+  --stripe: #b4232a;
+  --accent: #b4232a;
+  --accent-ink: #ffffff;
+  --font: "Manrope", sans-serif;
+  --display: "Unbounded", sans-serif;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 5;
+  width: 6px;
+  background: var(--stripe);
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}

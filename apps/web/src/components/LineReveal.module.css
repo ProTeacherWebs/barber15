@@ -1,0 +1,30 @@
+.lines {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.line {
+  display: block;
+  padding-block: 0.06em;
+  margin-block: -0.06em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .line {
+    animation: line-mask-in var(--m-dur-reveal) var(--ease-out-expo) both;
+    animation-delay: calc(120ms + var(--i, 0) * var(--m-stagger));
+  }
+}
+
+@keyframes line-mask-in {
+  from {
+    translate: 0 100%;
+    clip-path: inset(0 0 100% 0);
+  }
+
+  to {
+    translate: 0 0;
+    clip-path: inset(0 0 0 0);
+  }
+}

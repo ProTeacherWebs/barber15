@@ -1,0 +1,5 @@
+# Схему ведёт Prisma (prisma/migrations). Эта папка только для Edge Function.
+project_id = "fcvfrerknmarxrusjpuk"
+
+[functions.notifications]
+verify_jwt = false

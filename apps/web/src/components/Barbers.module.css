@@ -1,0 +1,130 @@
+.band {
+  background: var(--band);
+  color: var(--band-ink);
+}
+
+.band :global(.lede) {
+  color: var(--band-muted);
+}
+
+.stack {
+  --stack-top: 5.25rem;
+  --stack-offset: 0.85rem;
+  --stack-card-h: min(58svh, 26rem);
+  --stack-shrink: 0.04;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 calc(var(--cards) * var(--stack-offset));
+  display: grid;
+  gap: 8vh;
+  view-timeline: --stack block;
+}
+
+.card {
+  position: sticky;
+  top: calc(var(--stack-top) + (var(--i) - 1) * var(--stack-offset));
+  height: var(--stack-card-h);
+}
+
+.content {
+  position: relative;
+  height: 100%;
+  display: grid;
+  grid-template-rows: minmax(0, 1.15fr) minmax(0, 1fr);
+  overflow: hidden;
+  background: color-mix(in srgb, var(--band-ink) 12%, var(--band));
+  color: var(--band-ink);
+  border: 1px solid color-mix(in srgb, var(--band-ink) 18%, transparent);
+}
+
+.photo {
+  position: relative;
+  min-height: 0;
+}
+
+.portrait {
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  min-width: 0;
+  padding: 1.15rem 1.25rem 1.35rem;
+}
+
+.content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.content h3 {
+  font-family: var(--font-body), sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.years,
+.services {
+  color: var(--band-muted);
+}
+
+.bio {
+  max-width: 36rem;
+  margin-top: 0.35rem;
+}
+
+@media (min-width: 720px) {
+  .content {
+    grid-template-columns: minmax(9rem, 0.38fr) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .copy {
+    padding: 1.75rem 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .content,
+    .content::after {
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: --stack;
+      animation-range:
+        exit-crossing calc((var(--i) - 1) / var(--cards) * 100%)
+        exit-crossing calc(var(--i) / var(--cards) * 100%);
+    }
+
+    .content {
+      animation-name: stack-recede;
+      transform-origin: 50% 0;
+    }
+
+    .content::after {
+      animation-name: stack-dim;
+    }
+  }
+}
+
+@keyframes stack-recede {
+  to {
+    scale: calc(1 - (var(--cards) - var(--i)) * var(--stack-shrink));
+  }
+}
+
+@keyframes stack-dim {
+  to {
+    opacity: calc((var(--cards) - var(--i)) * 0.08);
+  }
+}

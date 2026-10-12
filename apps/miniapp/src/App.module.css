@@ -1,0 +1,230 @@
+.shell {
+  min-height: 100dvh;
+  padding: 1.1rem 1rem 5.6rem 1.25rem;
+}
+
+.mark {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.who {
+  margin: 0.15rem 0 0;
+  color: var(--muted);
+}
+
+.problem {
+  margin: 0.9rem 0 0;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.nav {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  padding: 0.7rem 0.9rem calc(0.7rem + env(safe-area-inset-bottom));
+  background: var(--raised);
+  border-top: 1px solid var(--line);
+}
+
+.nav button {
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+}
+
+.navCurrent {
+  color: var(--ink);
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+
+.steps {
+  display: flex;
+  gap: 0.35rem;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  overflow-x: auto;
+  list-style: none;
+}
+
+.steps button {
+  flex: none;
+  min-height: 40px;
+  padding: 0 0.15rem;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+}
+
+.stepCurrent {
+  color: var(--ink);
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+
+.panel h2 {
+  margin: 0.8rem 0 0.85rem;
+  font-family: var(--display);
+  font-size: 1.45rem;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.options {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.choice {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.8rem 0.85rem;
+  border: 1px solid var(--line);
+  background: var(--raised);
+  text-align: left;
+}
+
+.choice[aria-checked="true"] {
+  border-color: var(--accent);
+}
+
+.choice strong {
+  font-weight: 600;
+}
+
+.choice span,
+.muted {
+  color: var(--muted);
+}
+
+.price {
+  margin-top: 0.2rem;
+}
+
+.dates {
+  display: flex;
+  gap: 0.45rem;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  padding-bottom: 0.3rem;
+}
+
+.date,
+.time {
+  flex: none;
+  min-width: 4.4rem;
+  min-height: 48px;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--line);
+  background: var(--raised);
+}
+
+.date {
+  display: grid;
+  justify-items: center;
+}
+
+.date[aria-checked="true"],
+.time[aria-checked="true"] {
+  border-color: var(--accent);
+}
+
+.closed {
+  opacity: 0.45;
+}
+
+.times {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5.2rem, 1fr));
+  gap: 0.45rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.field input {
+  min-height: 48px;
+  padding: 0 0.8rem;
+  border: 1px solid var(--line);
+  background: var(--raised);
+}
+
+.summary {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0 0 1rem;
+}
+
+.summary div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.summary dt {
+  color: var(--muted);
+}
+
+.summary dd {
+  margin: 0;
+  text-align: right;
+}
+
+.actions {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.primary,
+.secondary {
+  min-height: 48px;
+  padding: 0 1rem;
+  border: 1px solid transparent;
+}
+
+.primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.secondary {
+  border-color: var(--line);
+  background: var(--raised);
+}
+
+.error {
+  margin: 0 0 0.7rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.list {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 0.9rem;
+}
+
+.card {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.85rem;
+  border: 1px solid var(--line);
+  background: var(--raised);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}

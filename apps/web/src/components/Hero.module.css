@@ -1,0 +1,138 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: 3rem 3.5rem;
+  color: #f3f4f6;
+  background: #121418;
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #121418;
+}
+
+.video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 20, 24, 0.88) 0%,
+    rgba(18, 20, 24, 0.74) 46%,
+    rgba(18, 20, 24, 0.5) 100%
+  );
+}
+
+.grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 2.5rem;
+}
+
+.place {
+  margin-bottom: 0.75rem;
+  color: #d5dbe3;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 8vw, 5.2rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.lead {
+  max-width: 36rem;
+  margin-top: 1.25rem;
+  color: #d5dbe3;
+}
+
+.hero :global(.ctaSecondary) {
+  border-color: rgba(243, 244, 246, 0.4);
+  background: transparent;
+  color: #f3f4f6;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+@media (min-width: 480px) {
+  .actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+.day {
+  align-self: end;
+  padding: 1.25rem 1.25rem 0.4rem;
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+}
+
+.dayTitle {
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.day ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.day li {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 1rem;
+  padding-block: 0.7rem;
+  border-top: 1px solid var(--line);
+  font-variant-numeric: tabular-nums;
+}
+
+.busy {
+  color: var(--muted);
+}
+
+.free {
+  color: var(--carmine);
+  font-weight: 600;
+}
+
+@media (min-width: 900px) {
+  .hero {
+    padding-block: 5.5rem 5rem;
+  }
+
+  .scrim {
+    background: linear-gradient(
+      90deg,
+      rgba(18, 20, 24, 0.9) 0%,
+      rgba(18, 20, 24, 0.72) 46%,
+      rgba(18, 20, 24, 0.28) 100%
+    );
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1.35fr) minmax(16rem, 0.75fr);
+    align-items: end;
+    gap: 3rem;
+  }
+}

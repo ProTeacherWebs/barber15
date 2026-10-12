@@ -1,0 +1,45 @@
+.featured {
+  margin: 0 0 2rem;
+}
+
+.featured blockquote {
+  margin: 0;
+}
+
+.featured blockquote p {
+  max-width: 18em;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+}
+
+.featured figcaption,
+.who {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 0.85rem;
+  color: var(--muted);
+}
+
+.rest {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.rest li {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  max-width: 40rem;
+}
+
+@media (min-width: 800px) {
+  .rest {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
