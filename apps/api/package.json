@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "node --env-file=../../.env ../../node_modules/tsx/dist/cli.mjs watch src/index.ts",
     "start": "node --env-file=../../.env ../../node_modules/tsx/dist/cli.mjs src/index.ts",
+    "postinstall": "prisma generate --schema=../../prisma/schema.prisma",
     "lint": "tsc --noEmit",
     "test": "node --env-file=../../.env --import tsx --test src/slots.test.ts src/telegram.test.ts src/telegram.booking.test.ts src/bot.test.ts src/booking.race.test.ts src/reminders.test.ts src/admin.test.ts src/analytics.test.ts"
   },
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@types/node": "^24.9.1",
+    "prisma": "^6.19.3",
     "typescript": "^5.9.3"
   }
 }
